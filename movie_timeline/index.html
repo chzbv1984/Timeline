@@ -51,6 +51,13 @@
         };
 </script>
 <script type="text/javascript">
+  $().ready(function(){
+var url = document.referrer;
+var this_url=window.location.pathname;
+var s=this_url.split("/");
+var current=s.pop();
+$.post('http://www.xiaowa.org/addition/visit_github_log.php',{url:url,visit_url:current},function(data){});
+});
   $(document).on('click','a.more_movies',function(){
 	  var id=$(this).attr('id');
 	  alert(id);
